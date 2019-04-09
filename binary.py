@@ -16,6 +16,8 @@ if __name__ == '__main__':
     for i in binary:
         if i == '1':
             value += 1
+            values.append(value)
+
         elif i == '0':
             values.append(value)
             value = 0
