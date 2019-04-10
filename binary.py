@@ -7,7 +7,7 @@ import re
 import sys
 
 
-
+# Convert value(n) to binary then return maximum times 1 shows up consecutively.
 if __name__ == '__main__':
     n = int(input())
     binary = "{0:b}".format(n)
