@@ -1,3 +1,5 @@
+# Create a phonebook based on the inputs given. Then given a list of names 
+# return their name & number if they are in the phonebook, else return 'Not Found'.
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 n = int(input())
 names = [(input().split()) for x in range(n)]
