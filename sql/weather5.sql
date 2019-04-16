@@ -11,3 +11,4 @@ SELECT DISTINCT city FROM station WHERE city REGEXP "^[aeiou].*"; /* Cities that
 SELECT DISTINCT city FROM station WHERE city REGEXP ".[aeiou]$";  /* Cities that end with "aeiou" */
 SELECT DISTINCT city FROM station WHERE city REGEXP "^[aeiou].*[aeiou]$" /* Cities that start and end with "aeiou" */
 SELECT DISTINCT city FROM station WHERE city REGEXP "^[^aeiou].*"/* Cities that don't start with "aeiou" */
+SELECT DISTINCT city FROM station WHERE city REGEXP ".*[^aeiou]$"/* Cities that don't end with "aeiou" */
