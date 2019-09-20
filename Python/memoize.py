@@ -1,3 +1,4 @@
+from timeit import timeit
 def memoize(f):
     memo = {}
     def helper(x):
