@@ -32,4 +32,4 @@ print(minAnagram(s1, s2)) # should print 1
 
 s1 = "abcd"
 s2 = "rcd"
-print(minAnagram(s1, s2)) # should print 5
+print(minAnagram(s1, s2)) # should print 3
