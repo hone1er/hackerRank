@@ -1,9 +1,8 @@
 from collections import Counter
 
-def minAnagram(s1, s2):
-    ''' s1 = string
-        s2 = string
-        return int minimum number of deletions to create anagram
+def minAnagram(s1: str, s2: str) -> int:
+    '''
+    return minimum number of deletions to create anagram
     '''
     longer_string = s1 if len(s1) >= len(s2) else s2
     shorter_string = s2 if len(s2) <= len(s1) else s1
