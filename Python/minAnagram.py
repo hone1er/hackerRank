@@ -1,34 +1,28 @@
-from collections import Counter
+" Find the minimum number of deletions required to make both strings anagrams of each other"
+# "a" "a"
+# "abcc" "cbaa" {c:0, b:0, a:1}
+# "a" "b"
+# "nba" "bntr"
+# "abc" "bca"
 
-def minAnagram(s1: str, s2: str) -> int:
-    '''
-    return minimum number of deletions to create anagram
-    '''
-    longer_string = s1 if len(s1) >= len(s2) else s2
-    shorter_string = s2 if len(s2) <= len(s1) else s1
-    s = Counter(longer_string)
+
+def min_deletions(s1: str, s2: str) -> int:
+    counter = {}
     count = 0
+    longer_string = s1 if len(s1) >= len(s2) else s2
+    shorter_string = s1 if len(s1) < len(s2) else s2
+
+    for letter in longer_string:
+        if letter in counter:
+            counter[letter] += 1
+        else:
+            counter[letter] = 1
+        
     for letter in shorter_string:
-        if letter in s and s[letter] > 0:
-            s[letter] -= 1
+        if letter in counter and counter[letter] > 0:
+            counter[letter] -= 1
+        else:
             count += 1
-    return len(s1) + len(s2) - (count * 2)
+    return count
 
-
-
-s1 = "abcd"
-s2 = "abcd"
-print(minAnagram(s1, s2)) # should print 0
-
-s1 = "gbcj"
-s2 = "abyd"
-print(minAnagram(s1, s2)) # should print 6
-
-
-s1 = "abc"
-s2 = "abcd"
-print(minAnagram(s1, s2)) # should print 1
-
-s1 = "abcd"
-s2 = "rcd"
-print(minAnagram(s1, s2)) # should print 3
+print(min_deletions("abcc", "cbaa"))
